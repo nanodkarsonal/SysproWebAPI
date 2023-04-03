@@ -24,8 +24,7 @@ namespace SysproWebApi.Controllers
         // POST api/values
         public void Post([FromBody] string value)
         {
-            SYSPROWCFServicesClientLibrary40.SYSPROWCFServicesPrimitiveClient client = new SYSPROWCFServicesClientLibrary40.SYSPROWCFServicesPrimitiveClient("", SYSPROWCFServicesClientLibrary40.SYSPROWCFBinding.NetTcp);
-            client.SetupAdd("","","","");
+            return;
         }
 
         // PUT api/values/5

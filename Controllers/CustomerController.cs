@@ -1,9 +1,7 @@
-﻿using SysproWebApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using Syspro;
+using SysproWebApi.Models;
 using System.Web.Http;
+
 
 namespace SysproWebApi.Controllers
 {
@@ -11,11 +9,17 @@ namespace SysproWebApi.Controllers
 
     public class CustomerController : ApiController
     {
-        [HttpGet]
-        public IEnumerable<Customer> Get()
+        private readonly ApiService _apiService;
+        public CustomerController()
         {
-            var customers = new Customers();
-            return customers.GetCustomers();
+            _apiService = new ApiService();
+        }
+
+        [HttpGet]
+        public string Get()
+        {
+            _apiService.AddCustomer();
+            return "added customer";
         }
 
         [HttpPost]

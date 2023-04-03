@@ -196,7 +196,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Syspro\Syspro.csproj">
+    <ProjectReference Include="Syspro\Syspro.csproj">
       <Project>{6d9eab66-6f27-417d-be06-dd61f12b166a}</Project>
       <Name>Syspro</Name>
     </ProjectReference>

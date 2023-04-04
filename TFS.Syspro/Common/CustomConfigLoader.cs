@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Syspro
+namespace TFS.Syspro.Common
 {
     public class CustomConfigLoader : IConfigurationSectionHandler
     {

@@ -1,6 +1,6 @@
 ﻿
 
-namespace Syspro.Model
+namespace TFS.Syspro.Models
 {
     public class SysproApiConfig
     {

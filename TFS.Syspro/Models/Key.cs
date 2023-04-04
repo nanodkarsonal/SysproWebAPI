@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace Syspro.Model
+namespace TFS.Syspro.Models
 {
     public partial class Key
     {

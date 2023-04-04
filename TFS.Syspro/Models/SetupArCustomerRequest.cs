@@ -3,7 +3,7 @@
 using Newtonsoft.Json;
 using System;
 
-namespace Syspro.Model
+namespace TFS.Syspro.Models
 {
     public class SetupArCustomerRequest
     {

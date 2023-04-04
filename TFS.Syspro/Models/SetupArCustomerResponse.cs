@@ -1,7 +1,7 @@
 ﻿
 using Newtonsoft.Json;
 
-namespace Syspro.Model
+namespace TFS.Syspro.Models
 {
     internal class SetupArCustomerResponse
     {

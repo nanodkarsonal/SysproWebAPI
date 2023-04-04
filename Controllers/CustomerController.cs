@@ -1,4 +1,5 @@
 ﻿using Syspro;
+using Syspro.Model;
 using SysproWebApi.Models;
 using System.Web.Http;
 
@@ -18,14 +19,21 @@ namespace SysproWebApi.Controllers
         [HttpGet]
         public string Get()
         {
-            _apiService.AddCustomer();
+            
             return "added customer";
         }
 
         [HttpPost]
-        public string CreateCustomer()
+        public string CreateCustomer([FromBody] SetupArCustomerRequest req)
         {
-            var customers = new Customers();
+            _apiService.AddCustomer(req);
+            return "created";
+        }
+
+        [HttpPost]
+        public string UpdateCustomer([FromBody] SetupArCustomerRequest req)
+        {
+            _apiService.AddCustomer(req);
             return "created";
         }
 

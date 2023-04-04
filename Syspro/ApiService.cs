@@ -6,6 +6,7 @@ using System.Xml;
 using System;
 using System.Xml.Serialization;
 using System.Configuration;
+using Newtonsoft.Json;
 
 namespace Syspro
 {
@@ -43,13 +44,22 @@ namespace Syspro
             return client;
         }
 
-        public void AddCustomer()
+        public void AddCustomer(SetupArCustomerRequest setupArCustomerRequest) 
         {
             var guid = Logon();
             var client = GetClient();
-            var setupArCustomerRequest = new SetupArCustomerRequest();
             var customerBOxml = ConvertObjectToXml(setupArCustomerRequest);
             var response = client.SetupAdd(guid, "ARSSCS", "", customerBOxml);
+            var setupArCustomerResponse = ConvertXmlToObject<SetupArCustomerResponse>(response);
+            Logoff(guid);
+        }
+
+        public void UpdateCustomer(SetupArCustomerRequest setupArCustomerRequest)
+        {
+            var guid = Logon();
+            var client = GetClient();
+            var customerBOxml = ConvertObjectToXml(setupArCustomerRequest);
+            var response = client.SetupUpdate(guid, "ARSSCS", "", customerBOxml);
             var setupArCustomerResponse = ConvertXmlToObject<SetupArCustomerResponse>(response);
             Logoff(guid);
         }
